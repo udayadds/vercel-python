@@ -29,10 +29,10 @@ class handler(BaseHTTPRequestHandler):
 		request = session.get(baseurl, headers=headers, timeout=5)
 		cookies = dict(request.cookies)
 		response = session.get(url, headers=headers, timeout=5, cookies=cookies)
-		print(response.json())
+		# print(response.json())
 		print(f'Status Code: {response.status_code}')
 
-		result = response.json()
+		# result = response.json()
 
-		self.wfile.write(result.encode(encoding='utf_8'))
+		self.wfile.write(response.content)
 		return
