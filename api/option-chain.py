@@ -21,9 +21,9 @@ class handler(BaseHTTPRequestHandler):
 		url = f"https://www.nseindia.com/api/option-chain-equities?symbol="+ticker
 		print(url)
 		headers = {
-            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Edg/98.0.1108.62',
-            'accept-language': 'en,gu;q=0.9,hi;q=0.8', 'accept-encoding': 'gzip, deflate, br'
-        }
+		    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Edg/98.0.1108.62',
+		    'accept-language': 'en,gu;q=0.9,hi;q=0.8', 'accept-encoding': 'gzip, deflate, br'
+		}
         
 		session = requests.Session()
 		request = session.get(baseurl, headers=headers, timeout=5)
