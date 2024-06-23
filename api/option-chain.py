@@ -24,9 +24,9 @@ class handler(BaseHTTPRequestHandler):
 		}
         
 		session = requests.Session()
-		request = session.get(baseurl, headers=headers, timeout=10)
+		request = session.get(baseurl, headers=headers, timeout=7, verify=False)
 		cookies = dict(request.cookies)
-		response = session.get(url, headers=headers, timeout=10, cookies=cookies)
+		response = session.get(url, headers=headers, timeout=7, cookies=cookies, verify=False)
 		# print(response.json())
 		# print(f'Status Code: {response.status_code}')
 		# result = response.json()
