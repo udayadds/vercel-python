@@ -7,7 +7,7 @@ class handler(BaseHTTPRequestHandler):
 	def do_GET(self):
 		s = self.path
 		dic = dict(parse.parse_qsl(parse.urlsplit(s).query))
-		
+		self.send_response(200)
 		self.send_header('Content-type', 'application/json')
 		self.end_headers()
 
@@ -31,6 +31,5 @@ class handler(BaseHTTPRequestHandler):
 		# print(f'Status Code: {response.status_code}')
 		# result = response.json()
 
-		self.send_response(response.status_code)
 		self.wfile.write(response.content)
 		return
